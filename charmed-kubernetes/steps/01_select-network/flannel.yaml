@@ -1,0 +1,9 @@
+services:
+  flannel: all
+relations:
+- - flannel:etcd
+  - etcd:db
+- - flannel:cni
+  - kubernetes-master:cni
+- - flannel:cni
+  - kubernetes-worker:cni
